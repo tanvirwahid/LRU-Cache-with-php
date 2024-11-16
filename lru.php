@@ -19,7 +19,7 @@ class Node
     /**
      * @param Node $previousNode
      */
-    public function setPreviousNode(Node &$previousNode = null)
+    public function setPreviousNode(Node $previousNode = null)
     {
         $this->previousNode = $previousNode;
     }
@@ -35,7 +35,7 @@ class Node
     /**
      * @param Node $nextNode
      */
-    public function setNextNode(Node &$nextNode = null)
+    public function setNextNode(Node $nextNode = null)
     {
         $this->nextNode = $nextNode;
     }
@@ -98,7 +98,7 @@ class DoublyLinkedList
     private ?Node $head = null;
     private ?Node $tail = null;
 
-    public function addToFront(Node &$node)
+    public function addToFront(Node $node)
     {
         $node->setNextNode($this->head);
 
@@ -114,7 +114,7 @@ class DoublyLinkedList
         }
     }
 
-    public function delete(Node &$node)
+    public function delete(Node $node)
     {
         $previousNode = $node->getPreviousNode();
         $nextNode = $node->getNextNode();
@@ -135,7 +135,7 @@ class DoublyLinkedList
 
     }
 
-    public function moveToFront(Node &$node)
+    public function moveToFront(Node $node)
     {
         $previousNode = null;
         $this->delete($node);
